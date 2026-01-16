@@ -1,0 +1,48 @@
+<CiscoIPPhoneDirectory>
+  <Title>Extension Directory</Title>
+  <Prompt>Select an Extension</Prompt>
+  <DirectoryEntry>
+    <Name>Call Centric</Name>
+    <Telephone>4632032</Telephone>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Tom</Name>
+    <Telephone>1003010</Telephone>
+  </DirectoryEntry>
+	<DirectoryEntry>
+    <Name>Tom 2</Name>
+    <Telephone>1006000</Telephone>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Lucas</Name>
+    <Telephone>2131314</Telephone>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Kris</Name>
+    <Telephone>4632001</Telephone>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Marcelo</Name>
+    <Telephone>6216621</Telephone>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Liam</Name>
+    <Telephone>2132001</Telephone>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Blank</Name>
+    <Telephone></Telephone>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Blank</Name>
+    <Telephone></Telephone>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Blank</Name>
+    <Telephone></Telephone>
+  </DirectoryEntry>
+  <DirectoryEntry>
+    <Name>Blank</Name>
+    <Telephone></Telephone>
+  </DirectoryEntry>
+</CiscoIPPhoneDirectory>

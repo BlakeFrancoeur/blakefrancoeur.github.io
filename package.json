@@ -1,0 +1,9 @@
+{
+  "name": "blakefrancoeur-github-io",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {"dev": "vite", "build": "vite build", "preview": "vite preview"},
+  "dependencies": {"@axiscommunications/fluent-components": "latest", "@axiscommunications/fluent-theme": "latest", "@fluentui/react-components": "^9.0.0", "react": "^18.3.1", "react-dom": "^18.3.1"},
+  "devDependencies": {"@vitejs/plugin-react": "latest", "vite": "latest"}
+}

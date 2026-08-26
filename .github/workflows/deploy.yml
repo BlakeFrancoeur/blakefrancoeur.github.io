@@ -48,7 +48,12 @@ jobs:
 
       - name: Build Axis Fluent Components examples
         working-directory: fluent-components
-        run: pnpm --filter examples build
+        run: pnpm --filter examples build --base=/
+
+      - name: Verify built asset paths
+        run: |
+          grep -o 'src="[^"]*"' fluent-components/examples/dist/index.html
+          test -f fluent-components/examples/dist/assets/index-*.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

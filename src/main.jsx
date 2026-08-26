@@ -9,28 +9,22 @@ import {
   Title1,
 } from '@fluentui/react-components'
 import { axisDarkTheme } from '@axiscommunications/fluent-theme'
+import { TopBar } from '@axiscommunications/fluent-topbar'
 
 function App() {
   return (
     <FluentProvider theme={axisDarkTheme}>
       <div style={{ minHeight: '100vh' }}>
-        <header
-          style={{
-            height: 64,
-            borderBottom: '1px solid var(--colorNeutralStroke2)',
-            display: 'flex',
-            alignItems: 'center',
-            padding: '0 32px',
-            gap: 32,
-          }}
-        >
-          <Text weight="bold" size={500}>BLAKE</Text>
-          <nav style={{ display: 'flex', gap: 8 }}>
-            <Button appearance="subtle">About</Button>
-            <Button appearance="subtle">Projects</Button>
-            <Button appearance="subtle">Tech</Button>
-          </nav>
-        </header>
+        <TopBar
+          leftCustomContent={<Text weight="bold" size={500}>BLAKE</Text>}
+          centerCustomContent={
+            <div style={{ display: 'flex', gap: 4 }}>
+              <Button appearance="subtle">About</Button>
+              <Button appearance="subtle">Projects</Button>
+              <Button appearance="subtle">Tech</Button>
+            </div>
+          }
+        />
 
         <main style={{ maxWidth: 1100, margin: '0 auto', padding: '96px 32px' }}>
           <Text size={200} style={{ letterSpacing: 2 }}>PERSONAL PORTAL</Text>

@@ -1,4 +1,4 @@
-name: Deploy Axis Fluent Components
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -18,35 +18,37 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout site repository
+      - name: Checkout website
         uses: actions/checkout@v4
 
       - name: Checkout Axis Fluent Components
         uses: actions/checkout@v4
         with:
           repository: AxisCommunications/fluent-components
-          path: axis-fluent-components
+          path: fluent-components
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9.5.0
-          run_install: false
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
-          cache-dependency-path: axis-fluent-components/pnpm-lock.yaml
+          cache-dependency-path: fluent-components/pnpm-lock.yaml
+          registry-url: https://npm.pkg.github.com
 
-      - name: Install Axis Fluent Components dependencies
-        working-directory: axis-fluent-components
+      - name: Install Axis dependencies
+        working-directory: fluent-components
         run: pnpm install --frozen-lockfile
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.AXIS_FLUENT }}
 
-      - name: Build the exact Axis examples application
-        working-directory: axis-fluent-components/examples
-        run: pnpm run build
+      - name: Build Axis Fluent Components examples
+        working-directory: fluent-components
+        run: pnpm --filter examples build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -54,7 +56,7 @@ jobs:
       - name: Upload Axis examples
         uses: actions/upload-pages-artifact@v3
         with:
-          path: axis-fluent-components/examples/dist
+          path: fluent-components/examples/dist
 
   deploy:
     environment:
